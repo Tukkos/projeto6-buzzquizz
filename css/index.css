@@ -58,6 +58,15 @@ h2 {
     flex-direction: column;
     background-color: #ffffff;
     width: 600px;
+    padding: 0 8px 0 4px;
+}
+
+.listaCriacao div:first-child {
+    padding-top: 21px;
+}
+
+.listaCriacao div:last-child {
+    padding-bottom: 24px;
 }
 
 .listaCriacao>li {
@@ -95,7 +104,30 @@ h2 {
     border: 1px solid #D1D1D1;
     border-radius: 5px;
     font-size: 20px;
+    color: #888888;
     font-style: italic;
+}
+
+.listaCriacao input::placeholder {
+    color: #BABABA;
+}
+
+.botaoQuiz {
+    display: flex;
+    justify-content: center;
+    margin-top: 85px;
+}
+
+.botaoQuiz button {
+    background: #EC362D;
+    color: #FFF5F4;
+    font-family: 'Roboto';
+    font-size: 21px;
+    text-align: center;
+    width: 369px;
+    height: 54px;
+    border-radius: 15px;
+    border: none;
 }
 
 .recuo {
