@@ -5,6 +5,16 @@ body {
     box-sizing: border-box;
 }
 
+input::placeholder {
+    color: #D1D1D1
+}
+
+h2 {
+    font-size: 20px;
+    color: #818181;
+    margin: 0 auto;
+}
+
 .redBanner {
     height: 70px;
     width: 100%;
@@ -50,12 +60,29 @@ body {
     width: 600px;
 }
 
+.listaCriacao>li {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    width: 600px;
+}
+
+.listaCriacao ion-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 25px;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
 .expandir {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .listaCriacao h1 {
+    width: 70%;
     margin: 25px 0 25px 15px;
     font-weight: 700;
     font-size: 20px;
@@ -68,10 +95,48 @@ body {
     border: 1px solid #D1D1D1;
     border-radius: 5px;
     font-size: 20px;
-    color: #D1D1D1;
     font-style: italic;
 }
 
 .recuo {
     height: 21px;
+}
+
+.botaoVermelho {
+    width: 370px;
+    height: 55px;
+    margin: 45px auto 9px auto;
+    background: #EC362D;
+    border: 0;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #FFF5F4;
+    cursor: pointer;
+}
+
+.quizzPronto {
+    width: 500px;
+    height: 270px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%);
+    border-radius: 5px;
+    position: relative;
+}
+
+.quizzPronto>h1 {
+    position: absolute;
+    left: 25px;
+    bottom: 15px;
+    color: #FFFFFF;
+}
+
+.botaoBranco {
+    width: 370px;
+    height: 55px;
+    background: #E5E5E5;
+    border: 0;
+    font-size: 18px;
+    color: #818181;
+    margin: 0 auto 25px auto;
+    cursor: pointer;
+    width: auto;
 }
