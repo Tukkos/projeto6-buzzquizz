@@ -2,6 +2,7 @@ body {
     background-color: #E5E5E5;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    box-sizing: border-box;
 }
 
 .redBanner {
@@ -26,5 +27,51 @@ body {
 }
 
 .quizBody {
-    margin-top: 70px;
+    margin: 70px auto 0 auto;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    margin: 60px auto;
+    font-weight: 700;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listaCriacao>div {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 600px;
+}
+
+.expandir {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listaCriacao h1 {
+    margin: 25px 0 25px 15px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.listaCriacao input {
+    margin: 4px 15px 4px 15px;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #D1D1D1;
+    font-style: italic;
+}
+
+.recuo {
+    height: 21px;
 }
