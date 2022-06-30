@@ -25,27 +25,25 @@
     <!-- Corpo do Quizz -->
     <div class="quizBody">
 
-
-        <!-- <div>
-        <!-- Criação de perguntas pag 1-->
+        <!-- Tele 3 Criação de perguntas pag 1-->
         <!--
         <div>
             <h1 class="titulo">Comece pelo começo</h1>
             <div class="listaCriacao">
                 <div>
-                    <input type="text" placeholder="Título do seu quizz">
+                    <input type="text" minlength="20" maxlength="65"placeholder=" Título do seu quizz (Min 20 e Max 65 caracteres">
                 </div>
                 <div>
-                    <input type="text" placeholder="URL da imagem do seu quizz">
+                    <input type="text" placeholder=" URL da imagem do seu quizz">
                 </div>
                 <div>
-                    <input type="text" placeholder="Quantidade de perguntas do quizz">
+                    <input type="text" placeholder=" Quantidade de perguntas do quizz (Min 3 perguntas)">
                 </div>
                 <div>
-                    <input type="text" placeholder="Quantidade de níveis do quizz">
+                    <input type="text" placeholder=" Quantidade de níveis do quizz (Min 2 níveis)">
                 </div>
             </div>
-            <div class="botaoQuiz" onclick="clicarBotao">
+            <div class="botaoQuiz" onclick="gerarSegundaPagina()">
                 <button>Prosseguir pra criar perguntas</button>
             </div>
         </div>
@@ -77,37 +75,38 @@
                     <input type="text" placeholder=" URL da imagem ${numero}">
                     <div class="recuo"></div>
                 </div>
+                <div>
+                    <button class="botaoVermelho" onclick="gerarTerceiraPagina()">Prosseguir para criar níveis</button>
+                </div>
             </div>
-<<<<<<< HEAD
         </div>
         -->
-=======
-<<<<<<< HEAD
-            <button class="botaoVermelho" onclick="gerarTerceiraPagina()">Prosseguir para criar níveis</button>
-        </div> -->
-        =======
->>>>>>> 1e09560200cd3d9d7fb8105d75ecf7dccb1282f9
 
-        <!-- Criação de perguntas pag 3-->
+        <!-- Tela 3 Criação de perguntas pag 3-->
+        
+        <div>
+            <h1 class="titulo">Agora decida os níveis</h1>
+            <div class="listaCriacao">
+                <li class="expandir">
+                    <h1>Nível ${numero}</h1>
+                    <ion-icon name="chevron-down-outline" onclick="show()"></ion-icon>
+                </li>
+                <div>
+                    <input type="text" minlength="10" placeholder=" Título do nível (Min 10 caracteres)">
+                    <input type="text" placeholder=" % de acerto mínima (um número entre 0 e 100)">
+                    <input type="text" placeholder=" URL da imagem do nível">
+                    <input type="text" minLenght ="30" placeholder=" Descrição do nível (Min 30 caracteres)">
+                </div>
+            </div>
+            <div class="botaoQuiz">
+                <button onclick="gerarQuartaPagina()">Finalizar Quizz</button>
+            </div>
+        </div>
+        
+    
+    <!-- Tela 3 Criação de perguntas pag 4 -->
         <!--
         <div>
-            <h1 class="titulo">Comece pelo começo</h1>
-            <div class="listaCriacao">
-                
-            </div>
-            <div class="botaoQuiz" onclick="clicarBotao">
-                <button>Prosseguir pra criar perguntas</button>
-            </div>
-        </div>
-        -->
-    </div>
-    -->
-
-    </div>
-    >>>>>>> 7cc382c0820861c7d2bcb21f33f12679327821d0
-
-    <!-- Tela 3 Criação de perguntas pag 4 -->
-    <!-- <div>
             <h1 class="titulo">Seu quizz está pronto!</h1>
             <div class="quizzPronto">
                 <img src="" alt="">
@@ -116,7 +115,8 @@
             <button class="botaoVermelho" onclick="acessarQuizz()">Acessar Quizz</button>
             <div></div>
             <button class="botaoBranco" onclick="voltarHome()">Voltar pra home</button>
-        </div> -->
+        </div>
+        -->
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
