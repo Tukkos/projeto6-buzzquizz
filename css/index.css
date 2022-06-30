@@ -28,6 +28,7 @@ h2 {
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 1;
 }
 
 .redBanner>h1 {
@@ -57,7 +58,6 @@ h2 {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    width: 600px;
     padding: 0 8px 0 4px;
 }
 
@@ -171,4 +171,78 @@ h2 {
     margin: 0 auto 25px auto;
     cursor: pointer;
     width: auto;
+}
+
+
+.topoSegundaTela {
+    width: 100vw;
+    height: 225px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57));
+}
+
+.bannerQuizz {
+    position: relative;
+}
+
+.chamadaQuizz {
+    position: absolute;
+    left: auto;
+    top: 150px;
+    color: #FFFFFF;
+    font-size: 40px;
+}
+
+.caixaPergunta {
+    margin: 42px auto 0 auto;
+    width: 760px;
+    height: 675px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.pergunta {
+    width: 710px;
+    height: 140px;
+    margin: 20px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.respostas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.respostas>div {
+    margin: 20px 25px;
+}
+
+.imgPerg {
+    width: 330px;
+    height: 200px;
+}
+
+.resultado {
+    margin: 42px auto 0 auto;
+    width: 760px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.imgResult {
+    width: 360px;
+    height: 270px;
+    margin: 15px 25px;
+}
+
+.resultado p {
+    margin: 15px 25px 20px 0;
+}
+
+.resultadoAqui {
+    display: flex;
 }
