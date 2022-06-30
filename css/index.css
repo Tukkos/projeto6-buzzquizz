@@ -145,6 +145,7 @@ h2 {
     width: 330px;
     height: 255px;
     margin: 20px 25px 20px 25px;
+    cursor: pointer;
 }
 
 .respostas p {
@@ -153,12 +154,32 @@ h2 {
     margin: 10px 0 10px 0;
     font-weight: 700;
     font-size: 20px;
-    color: #000000;
 }
 
 .imgPerg {
     width: 330px;
     height: 200px;
+    opacity: 0.3;
+}
+
+.respostaCerta {
+    color: #009C22;
+}
+
+.respostaErrada {
+    color: #FF4B4B;
+}
+
+.testeteste {
+    color: #000000;
+}
+
+.respostaOnHold>img {
+    opacity: 1;
+}
+
+.respostaEscolhida>img {
+    opacity: 1;
 }
 
 .resultado {
