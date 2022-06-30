@@ -15,6 +15,9 @@ h2 {
     margin: 0 auto;
 }
 
+
+/* HEAD BuzzQuizz */
+
 .redBanner {
     height: 70px;
     width: 100%;
@@ -28,7 +31,7 @@ h2 {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 5;
 }
 
 .redBanner>h1 {
@@ -37,13 +40,153 @@ h2 {
     font-size: 37px;
 }
 
+
+/* QuizzBody */
+
 .quizBody {
     margin: 70px auto 0 auto;
-    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.botaoVermelho {
+    width: 370px;
+    height: 55px;
+    margin: 45px auto 9px auto;
+    background: #EC362D;
+    border: 0;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #FFF5F4;
+    cursor: pointer;
+}
+
+.botaoBranco {
+    width: 370px;
+    height: 55px;
+    background: #E5E5E5;
+    border: 0;
+    font-size: 18px;
+    color: #818181;
+    margin: 0 auto 25px auto;
+    cursor: pointer;
+    width: auto;
+}
+
+
+/* Tela 1 Quizzes */
+
+
+
+
+
+
+/* Tela 2 Jogando o Quizz */
+
+.bannerQuizz {
+    position: relative;
+    width: 100vw;
+    height: 225px;
+}
+
+.tituloQuizz {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    font-size: 40px;
+    text-shadow: gray 0 0 2px;
+    z-index: 2;
+}
+
+.topoSegundaTela {
+    width: 100vw;
+    height: 225px;
+}
+
+.pergunta {
+    margin: 42px auto 0 auto;
+    width: 760px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.cxPergunta {
+    margin: 30px auto 0 auto;
+    width: 710px;
+    height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.cxPergunta>p {
+    font-weight: 700;
+    font-size: 25px;
+    color: #ffffff;
+    word-break: break-word;
+}
+
+.respostas {
+    margin: 0 auto 0 auto;
+    width: 760px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #ffffff;
+}
+
+.respostas>div {
+    width: 330px;
+    height: 255px;
+    margin: 20px 25px 20px 25px;
+}
+
+.respostas p {
+    width: 330px;
+    word-break: break-word;
+    margin: 10px 0 10px 0;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+}
+
+.imgPerg {
+    width: 330px;
+    height: 200px;
+}
+
+.resultado {
+    margin: 42px auto 0 auto;
+    width: 760px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.imgResult {
+    width: 360px;
+    height: 270px;
+    margin: 15px 25px;
+}
+
+.resultado p {
+    margin: 15px 25px 20px 0;
+    word-break: break-word;
+}
+
+.resultadoAqui {
+    display: flex;
+}
+
+
+/* Tela 3 Criação de Quizz */
 
 .titulo {
     margin: 60px auto;
@@ -55,6 +198,7 @@ h2 {
 }
 
 .listaCriacao>div {
+    width: 600px;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -133,18 +277,6 @@ h2 {
     height: 21px;
 }
 
-.botaoVermelho {
-    width: 370px;
-    height: 55px;
-    margin: 45px auto 9px auto;
-    background: #EC362D;
-    border: 0;
-    border-radius: 15px;
-    font-size: 18px;
-    color: #FFF5F4;
-    cursor: pointer;
-}
-
 .quizzPronto {
     width: 500px;
     height: 270px;
@@ -158,90 +290,4 @@ h2 {
     left: 25px;
     bottom: 15px;
     color: #FFFFFF;
-}
-
-.botaoBranco {
-    width: 370px;
-    height: 55px;
-    background: #E5E5E5;
-    border: 0;
-    font-size: 18px;
-    color: #818181;
-    margin: 0 auto 25px auto;
-    cursor: pointer;
-    width: auto;
-}
-
-
-.topoSegundaTela {
-    width: 100vw;
-    height: 225px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57));
-}
-
-.bannerQuizz {
-    position: relative;
-}
-
-.chamadaQuizz {
-    position: absolute;
-    left: auto;
-    top: 150px;
-    color: #FFFFFF;
-    font-size: 40px;
-}
-
-.caixaPergunta {
-    margin: 42px auto 0 auto;
-    width: 760px;
-    height: 675px;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-}
-
-.pergunta {
-    width: 710px;
-    height: 140px;
-    margin: 20px 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.respostas {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.respostas>div {
-    margin: 20px 25px;
-}
-
-.imgPerg {
-    width: 330px;
-    height: 200px;
-}
-
-.resultado {
-    margin: 42px auto 0 auto;
-    width: 760px;
-    height: 430px;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-}
-
-.imgResult {
-    width: 360px;
-    height: 270px;
-    margin: 15px 25px;
-}
-
-.resultado p {
-    margin: 15px 25px 20px 0;
-}
-
-.resultadoAqui {
-    display: flex;
 }
