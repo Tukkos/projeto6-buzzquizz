@@ -79,21 +79,27 @@
         </div> -->
 
 
-        <!-- Criação de perguntas pag 1-->
-        <!-- <div>
+        <!-- Tele 3 Criação de perguntas pag 1-->
+        <!--<div>
             <h1 class="titulo">Comece pelo começo</h1>
             <div class="listaCriacao">
                 <div>
-                    <input type="text" placeholder="Título do seu quizz">
-                    <input type="text" placeholder="URL da imagem do seu quizz">
-                    <input type="text" placeholder="Quantidade de perguntas do quizz">
-                    <input type="text" placeholder="Quantidade de níveis do quizz">
+                    <input type="text" minlength="20" maxlength="65"placeholder=" Título do seu quizz (Min 20 e Max 65 caracteres">
+                </div>
+                <div>
+                    <input type="text" placeholder=" URL da imagem do seu quizz">
+                </div>
+                <div>
+                    <input type="text" placeholder=" Quantidade de perguntas do quizz (Min 3 perguntas)">
+                </div>
+                <div>
+                    <input type="text" placeholder=" Quantidade de níveis do quizz (Min 2 níveis)">
                 </div>
             </div>
             <div class="botaoQuiz" onclick="gerarSegundaPagina()">
                 <button>Prosseguir pra criar perguntas</button>
             </div>
-        </div> -->
+        </div>-->
 
         <!-- Tela 3 Criação de perguntas pag 2 -->
         <!-- <div>
@@ -125,6 +131,26 @@
                 </div>
             </div>
         </div> -->
+
+        <!-- Tela 3 Criação de perguntas pag 3-->
+        <div>
+            <h1 class="titulo">Agora decida os níveis</h1>
+            <div class="listaCriacao">
+                <li class="expandir">
+                    <h1>Nível ${numero}</h1>
+                    <ion-icon name="chevron-down-outline" onclick="show()"></ion-icon>
+                </li>
+                <div>
+                    <input type="text" minlength="10" placeholder=" Título do nível (Min 10 caracteres)">
+                    <input type="text" placeholder=" % de acerto mínima (um número entre 0 e 100)">
+                    <input type="text" placeholder=" URL da imagem do nível">
+                    <input type="text" minLenght ="30" placeholder=" Descrição do nível (Min 30 caracteres)">
+                </div>
+            </div>
+            <div class="botaoQuiz">
+                <button onclick="gerarQuartaPagina()">Finalizar Quizz</button>
+            </div>
+        </div>
 
         <!-- Tela 3 Criação de perguntas pag 4 -->
         <!-- <div>
