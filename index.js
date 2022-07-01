@@ -15,6 +15,7 @@ let renderQuizbody = ``;
 buscarQuizz();
 
 function buscarQuizz() {
+    scrollTopo()
     const promessa = axios.get(urlQuizzUnico);
     // console.log(promessa);
     promessa.then(renderizarMensagens);
@@ -101,6 +102,10 @@ function scroll() {
     document.querySelector(`.proximo`).scrollIntoView({ behavior: `smooth`, block: `end` });
 }
 
+function scrollTopo() {
+    document.querySelector(`.bannerQuizz`).scrollIntoView({ behavior: `smooth`, block: `start` });
+}
+
 function buscarQuizz2() {
     const promessa = axios.get(urlQuizzUnico);
     console.log(promessa);
@@ -128,9 +133,9 @@ function renderizarResultado(dados) {
                 <p>${axios.levels[k].text}</p>
             </div>
         
-            <button class="botaoVermelho" onclick="acessarQuizz()">Acessar Quizz</button>
+            <button class="botaoVermelho" onclick="buscarQuizz()">Reiniciar Quizz</button>
             <div></div>
-            <button class="botaoBranco" onclick="voltarHome()">Voltar pra home</button>
+            <button class="botaoBranco  proximo" onclick="voltarHome()">Voltar pra home</button>
             `;
             return
         }
