@@ -2,7 +2,32 @@ const urlQuizzes = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes";
 const urlQuizzUnico = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/1";
 
 // Tela 1------------------------------------------------------------------------------------------------------------------
-
+function criarQuizz() {
+    let quizBody = document.querySelector(".quizBody");
+    quizBody.innerHTML = "";
+    quizBody.innerHTML = `
+    <div>
+        <h1 class="titulo">Comece pelo começo</h1>
+        <div class="listaCriacao">
+            <div>
+                <input type="text" minlength="20" maxlength="65"placeholder=" Título do seu quizz (Min 20 e Max 65 caracteres">
+            </div>
+            <div>
+                <input type="text" placeholder=" URL da imagem do seu quizz">
+            </div>
+            <div>
+                <input type="text" placeholder=" Quantidade de perguntas do quizz (Min 3 perguntas)">
+            </div>
+            <div>
+                <input type="text" placeholder=" Quantidade de níveis do quizz (Min 2 níveis)">
+            </div>
+        </div>
+        <div class="botaoQuiz" onclick="gerarSegundaPagina()">
+            <button>Prosseguir pra criar perguntas</button>
+        </div>
+    </div>
+    `;
+}
 
 // Tela 2------------------------------------------------------------------------------------------------------------------
 
