@@ -182,12 +182,12 @@ h2 {
     opacity: 1;
 }
 
-.resultado {
-    margin: 42px auto 0 auto;
+.resultadoAqui {
+    margin: 0 auto 0 auto;
     width: 760px;
-    height: 430px;
+    height: 310px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #ffffff;
 }
 
@@ -197,13 +197,11 @@ h2 {
     margin: 15px 25px;
 }
 
-.resultado p {
+.resultadoAqui p {
     margin: 15px 25px 20px 0;
     word-break: break-word;
-}
-
-.resultadoAqui {
-    display: flex;
+    font-weight: 700;
+    line-height: 25px;
 }
 
 
