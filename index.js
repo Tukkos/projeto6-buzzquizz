@@ -1,5 +1,5 @@
 const urlQuizzes = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes";
-const urlQuizzUnico = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/1";
+
 
 // Tela 1------------------------------------------------------------------------------------------------------------------
 function criarQuizz() {
@@ -41,6 +41,7 @@ buscarQuizz();
 
 function buscarQuizz() {
     scrollTopo()
+    const urlQuizzUnico = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/6";
     const promessa = axios.get(urlQuizzUnico);
     // console.log(promessa);
     promessa.then(renderizarMensagens);
@@ -133,6 +134,7 @@ function scrollTopo() {
 }
 
 function buscarQuizz2() {
+    const urlQuizzUnico = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/6";
     const promessa = axios.get(urlQuizzUnico);
     console.log(promessa);
     promessa.then(renderizarResultado);

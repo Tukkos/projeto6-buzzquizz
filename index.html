@@ -26,8 +26,8 @@
     <div class="quizBody">
         <!-- Tela 1 Lista de Quizzes -->
         <!--<div class="lista-de-quizzes">-->
-            <!-- Quizzes do Usuário sem Quizzes -->
-            <!--<div class="quizzes-usuario-vazio">
+        <!-- Quizzes do Usuário sem Quizzes -->
+        <!--<div class="quizzes-usuario-vazio">
                 <div class="quizzes-usuario">
                     <span>Você não criou nenhum quizz ainda :(</span>
                     <div>
@@ -47,8 +47,8 @@
                 </div>
             </div>-->
 
-            <!-- Quizzes do Usuário com Quizzes -->
-            <!--<div class="quizzes-usuario-cheio">
+        <!-- Quizzes do Usuário com Quizzes -->
+        <!--<div class="quizzes-usuario-cheio">
                 <div>
                     <h1>Seus Quizzes</h1>
                     <ion-icon name="add-circle" onclick="criarQuizz()"></ion-icon>
@@ -163,40 +163,75 @@
                 </div>
             </div>
             <div>
-                <button class="botaoVermelho" onclick="gerarTerceiraPagina()">Prosseguir para criar níveis</button>
-            </div>-->
+                <input type="text" placeholder=" URL da imagem do seu quizz">
+            </div>
+            <div>
+                <input type="text" placeholder=" Quantidade de perguntas do quizz (Min 3 perguntas)">
+            </div>
+            <div>
+                <input type="text" placeholder=" Quantidade de níveis do quizz (Min 2 níveis)">
+            </div>
+        </div>
+        <div class="botaoQuiz" onclick="gerarSegundaPagina()">
+            <button>Prosseguir pra criar perguntas</button>
+        </div> -->
+
+        <!-- Tela 3 Criação de perguntas pag 2 -->
+        <!-- <h1 class="titulo">Crie suas perguntas</h1>
+        <div class="listaCriacao">
+            <li class="expandir">
+                <h1>Pergunta ${numero}</h1>
+                <ion-icon name="chevron-down-outline" onclick="show()"></ion-icon>
+            </li>
+            <div class="criacaoDois">
+                <input type="text" minlength="20" placeholder=" Texto da pergunta (Min 20 caracteres)">
+                <input type="text" maxlength="7" placeholder=" Cor de fundo da pergunta (Modelo Hexadecimal)">
+                <h1>Resposta correta</h1>
+                <input type="text" placeholder=" Resposta correta">
+                <input type="text" placeholder=" URL da imagem">
+                <h1>Respostas incorretas</h1>
+                <input type="text" placeholder=" Resposta incorreta ${numero}">
+                <input type="text" placeholder=" URL da imagem ${numero}">
+                <div class="recuo"></div>
+                <input type="text" placeholder=" Resposta incorreta ${numero}">
+                <input type="text" placeholder=" URL da imagem ${numero}">
+                <div class="recuo"></div>
+                <input type="text" placeholder=" Resposta incorreta ${numero}">
+                <input type="text" placeholder=" URL da imagem ${numero}">
+                <div class="recuo"></div>
+            </div>
+        </div>
+        <div>
+            <button class="botaoVermelho" onclick="gerarTerceiraPagina()">Prosseguir para criar níveis</button>
+        </div> -->
 
         <!-- Tela 3 Criação de perguntas pag 3-->
-        <!--<div>
-            <h1 class="titulo">Agora decida os níveis</h1>
-            <div class="listaCriacao">
-                <li class="expandir">
-                    <h1>Nível ${numero}</h1>
-                    <ion-icon name="chevron-down-outline" onclick="show()"></ion-icon>
-                </li>
-                <div>
-                    <input type="text" minlength="10" placeholder=" Título do nível (Min 10 caracteres)">
-                    <input type="text" placeholder=" % de acerto mínima (um número entre 0 e 100)">
-                    <input type="text" placeholder=" URL da imagem do nível">
-                    <input type="text" minLenght ="30" placeholder=" Descrição do nível (Min 30 caracteres)">
-                </div>
+        <!-- <h1 class="titulo">Agora decida os níveis</h1>
+        <div class="listaCriacao">
+            <li class="expandir">
+                <h1>Nível ${numero}</h1>
+                <ion-icon name="chevron-down-outline" onclick="show()"></ion-icon>
+            </li>
+            <div>
+                <input type="text" minlength="10" placeholder=" Título do nível (Min 10 caracteres)">
+                <input type="text" placeholder=" % de acerto mínima (um número entre 0 e 100)">
+                <input type="text" placeholder=" URL da imagem do nível">
+                <input type="text" minLenght="30" placeholder=" Descrição do nível (Min 30 caracteres)">
             </div>
-            <div class="botaoQuiz">
-                <button onclick="gerarQuartaPagina()">Finalizar Quizz</button>
-            </div>
-        </div>-->
+        </div>
+        <div class="botaoQuiz">
+            <button onclick="gerarQuartaPagina()">Finalizar Quizz</button>
+        </div> -->
 
         <!-- Tela 3 Criação de perguntas pag 4 -->
-        <!-- <div>
-            <h1 class="titulo">Seu quizz está pronto!</h1>
-            <div class="quizzPronto">
-                <img src="" alt="">
-                <h1>${titulo}</h1>
-            </div>
-            <button class="botaoVermelho" onclick="acessarQuizz()">Acessar Quizz</button>
-            <div></div>
-            <button class="botaoBranco" onclick="voltarHome()">Voltar pra home</button>
-        </div> -->
+        <!-- <h1 class="titulo">Seu quizz está pronto!</h1>
+        <div class="quizzPronto">
+            <img src="" alt="">
+            <h1>${titulo}</h1>
+        </div>
+        <button class="botaoVermelho" onclick="acessarQuizz()">Acessar Quizz</button>
+        <div></div>
+        <button class="botaoBranco" onclick="voltarHome()">Voltar pra home</button> -->
 
     </div>
 

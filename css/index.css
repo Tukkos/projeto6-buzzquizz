@@ -257,13 +257,13 @@ h2 {
     width: 250px;
 }
 
-.quizzes-usuario-vazio h1{
+.quizzes-usuario-vazio h1 {
     font-size: 20px;
     font-weight: 700;
     margin: 70px 0 12px 0;
 }
 
-.quizzes-usuario-vazio div{
+.quizzes-usuario-vazio div {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -288,7 +288,7 @@ h2 {
     width: 1065px;
 }
 
-.quizzes-usuario-cheio div{
+.quizzes-usuario-cheio div {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -302,7 +302,7 @@ h2 {
     margin: 48px 0 12px 0;
 }
 
-.quizzes-usuario-cheio h1{
+.quizzes-usuario-cheio h1 {
     font-size: 20px;
     font-weight: 700;
 }
