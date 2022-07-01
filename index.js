@@ -32,9 +32,10 @@ function renderizarMensagens(dados) {
     const axios = dados.data;
 
     renderQuizbody += `
-    <div class="bannerQuizz" background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url(${axios.image});>
+    <div class="bannerQuizz">
         <h1 class="tituloQuizz">${axios.title}</h1>
         <img class="topoSegundaTela" src="${axios.image}" alt="">
+        <div class="telaPreta"></div>
     </div>
     `;
 
