@@ -1,6 +1,11 @@
 const urlQuizzes = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes";
 const urlQuizzUnico = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/1";
 
+// Tela 1------------------------------------------------------------------------------------------------------------------
+
+
+// Tela 2------------------------------------------------------------------------------------------------------------------
+
 let pontos = 0;
 let perguntasRespondidas = 0;
 let perguntas = 0;
@@ -133,3 +138,4 @@ function renderizarResultado(dados) {
 }
 
 
+// Tela 3---------------------------------------------------------------------------------------------------------------------------------
