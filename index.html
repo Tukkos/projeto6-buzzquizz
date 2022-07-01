@@ -31,7 +31,7 @@
                 <div class="quizzes-usuario">
                     <span>Você não criou nenhum quizz ainda :(</span>
                     <div>
-                        <button>Criar Quizz</button>
+                        <button onclick="criarQuizz()">Criar Quizz</button>
                     </div>
                 </div>
                 <div>
@@ -51,7 +51,7 @@
         <!--<div class="quizzes-usuario-cheio">
                 <div>
                     <h1>Seus Quizzes</h1>
-                    <ion-icon name="add-circle"></ion-icon>
+                    <ion-icon name="add-circle" onclick="criarQuizz()"></ion-icon>
                 </div>
                 <div>
                     <img class="caixa-quizz-imagem" src="" />
@@ -72,7 +72,7 @@
         <!--</div>-->
 
         <!-- Tela 2 -->
-        <!-- <div class="bannerQuizz">
+        <!--<div class="bannerQuizz">
             <img class="topoSegundaTela"
                 src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
                 alt="">
@@ -111,16 +111,65 @@
 
         <button class="botaoVermelho" onclick="acessarQuizz()">Acessar Quizz</button>
         <div></div>
-        <button class="botaoBranco" onclick="voltarHome()">Voltar pra home</button> -->
+        <button class="botaoBranco" onclick="voltarHome()">Voltar pra home</button>-->
 
 
 
+<<<<<<< HEAD
         <!-- Tela 3 Criação de perguntas pag 1-->
         <h1 class="titulo">Comece pelo começo</h1>
         <div class="listaCriacao">
             <div>
                 <input type="text" minlength="20" maxlength="65"
                     placeholder=" Título do seu quizz (Min 20 e Max 65 caracteres">
+=======
+        <!-- Tele 3 Criação de perguntas pag 1-->
+        <!--<div>
+            <h1 class="titulo">Comece pelo começo</h1>
+            <div class="listaCriacao">
+                <div>
+                    <input type="text" minlength="20" maxlength="65"placeholder=" Título do seu quizz (Min 20 e Max 65 caracteres">
+                </div>
+                <div>
+                    <input type="text" placeholder=" URL da imagem do seu quizz">
+                </div>
+                <div>
+                    <input type="text" placeholder=" Quantidade de perguntas do quizz (Min 3 perguntas)">
+                </div>
+                <div>
+                    <input type="text" placeholder=" Quantidade de níveis do quizz (Min 2 níveis)">
+                </div>
+            </div>
+            <div class="botaoQuiz" onclick="gerarSegundaPagina()">
+                <button>Prosseguir pra criar perguntas</button>
+            </div>
+        </div>-->
+        <!-- Tela 3 Criação de perguntas pag 2 -->
+        <!-- <div>
+            <h1 class="titulo">Crie suas perguntas</h1>
+            <div class="listaCriacao">
+                <li class="expandir">
+                    <h1>Pergunta ${numero}</h1>
+                    <ion-icon name="chevron-down-outline" onclick="show()"></ion-icon>
+                </li>
+                <div class="criacaoDois">
+                    <input type="text" minlength="20" placeholder=" Texto da pergunta (Min 20 caracteres)">
+                    <input type="text" maxlength="7" placeholder=" Cor de fundo da pergunta (Modelo Hexadecimal)">
+                    <h1>Resposta correta</h1>
+                    <input type="text" placeholder=" Resposta correta">
+                    <input type="text" placeholder=" URL da imagem">
+                    <h1>Respostas incorretas</h1>
+                    <input type="text" placeholder=" Resposta incorreta ${numero}">
+                    <input type="text" placeholder=" URL da imagem ${numero}">
+                    <div class="recuo"></div>
+                    <input type="text" placeholder=" Resposta incorreta ${numero}">
+                    <input type="text" placeholder=" URL da imagem ${numero}">
+                    <div class="recuo"></div>
+                    <input type="text" placeholder=" Resposta incorreta ${numero}">
+                    <input type="text" placeholder=" URL da imagem ${numero}">
+                    <div class="recuo"></div>
+                </div>
+>>>>>>> de39b696641779d33cdc70591c2afae5d28b1a53
             </div>
             <div>
                 <input type="text" placeholder=" URL da imagem do seu quizz">
