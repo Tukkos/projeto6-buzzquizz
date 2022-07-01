@@ -30,19 +30,19 @@ function renderizarMensagens(dados) {
                 <p>${dados.data.questions[i].title}</p >
             </div >
         </div >
-            <div class="respostas">
+            <div class="respostas respostaEscondida respostaOnHold proximo">
                 `;
 
         for (let j = 0; j < axios.questions[i].answers.length; j++) {
             if (dados.data.questions[i].answers[j].isCorrectAnswer === true) {
                 renderQuizbody += `
-            <div class="respostaCerta, testeteste, respostaOnHold" onclick="selecionarResposta(this)">
+            <div class="respostaCerta" onclick="selecionarResposta(this)">
                 <img class="imgPerg" src="${dados.data.questions[i].answers[j].image}" alt="">
                 <p>${dados.data.questions[i].answers[j].text}</p>
             </div>`;
             } else {
                 renderQuizbody += `
-            <div class="respostaErrada, testeteste, respostaOnHold" onclick="selecionarResposta(this)">
+            <div class="respostaErrada" onclick="selecionarResposta(this)">
                 <img class="imgPerg" src="${dados.data.questions[i].answers[j].image}" alt="">
                 <p>${dados.data.questions[i].answers[j].text}</p>
             </div>`;
@@ -56,10 +56,20 @@ function renderizarMensagens(dados) {
 }
 
 function selecionarResposta(elemento) {
-    // let respostas = elemento.parentNode.querySelector(`.respostas`)
+    let respostas = elemento.parentNode;
+    let conferirJaTemMarcada = respostas.querySelector(`.respostaEscolhida`);
 
+    if (conferirJaTemMarcada === null) {
 
-    elemento.classList.remove("respostaOnHold");
-    elemento.classList.remove(`testeteste`);
-    // elemento.classList.add(`respostaEscolhida`);
+        elemento.classList.add(`respostaEscolhida`);
+        respostas.classList.remove(`respostaOnHold`);
+        respostas.classList.remove(`respostaEscondida`);
+        respostas.classList.remove(`proximo`);
+
+        setTimeout(scroll, 2000);
+    }
+}
+
+function scroll() {
+    document.querySelector(`.proximo`).scrollIntoView({ behavior: `smooth`, block: `end` });
 }
