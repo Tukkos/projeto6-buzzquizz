@@ -10,23 +10,22 @@ let pontos = 0;
 let perguntasRespondidas = 0;
 let perguntas = 0;
 let respostas = [];
-let renderQuizbody = ``;
+let renderQuizbody;
 
-buscarQuizz();
+// buscarQuizz();
 
 function buscarQuizz() {
-    scrollTopo()
     const urlQuizzUnico = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/6";
     const promessa = axios.get(urlQuizzUnico);
     // console.log(promessa);
-    promessa.then(renderizarMensagens);
+    promessa.then(renderizarPerguntas);
 }
 
 function mix() {
     return 0.5 - Math.random();
 }
 
-function renderizarMensagens(dados) {
+function renderizarPerguntas(dados) {
     // console.log(dados);
     let quizBody = document.querySelector(".quizBody");
     renderQuizbody = ``;
@@ -104,10 +103,6 @@ function scroll() {
     document.querySelector(`.proximo`).scrollIntoView({ behavior: `smooth`, block: `end` });
 }
 
-function scrollTopo() {
-    document.querySelector(`.bannerQuizz`).scrollIntoView({ behavior: `smooth`, block: `start` });
-}
-
 function buscarQuizz2() {
     const urlQuizzUnico = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/6";
     const promessa = axios.get(urlQuizzUnico);
@@ -140,6 +135,9 @@ function renderizarResultado(dados) {
             <div></div>
             <button class="botaoBranco  proximo" onclick="voltarHome()">Voltar pra home</button>
             `;
+            pontos = 0;
+            perguntasRespondidas = 0;
+            perguntas = 0;
             return
         }
     }
@@ -147,3 +145,61 @@ function renderizarResultado(dados) {
 
 
 // Tela 3---------------------------------------------------------------------------------------------------------------------------------
+let quizzTitulo;
+let quizzImage;
+let quizzNPerguntas;
+let quizzNNiveis;
+
+gerarCriacaoComeco();
+
+function gerarCriacaoComeco() {
+    let quizBody = document.querySelector(".quizBody");
+
+    quizBody.innerHTML = `
+    <h1 class="titulo">Comece pelo começo</h1>
+        <div class="listaCriacao">
+            <div>
+                <input type="text" maxlength="65" placeholder=" Título do seu quizz (Min 20 e Max 65 caracteres)" class="qTitulo" >
+            </div>
+            <div>
+                <input type="text" placeholder=" URL da imagem do seu quizz" class="qImage">
+            </div>
+            <div>
+                <input type="number" min="3" placeholder=" Quantidade de perguntas do quizz (Min 3 perguntas)" class="nPerguntas">
+            </div>
+            <div>
+                <input type="number" min="2" placeholder=" Quantidade de níveis do quizz (Min 2 níveis)" class="nNiveis">
+            </div>
+        </div>
+        <div class="botaoQuiz" onclick="validarCriacaoComeco()">
+            <button>Prosseguir pra criar perguntas</button>
+        </div>
+    `;
+}
+
+function validarCriacaoComeco() {
+    quizzTitulo = document.querySelector(".qTitulo").value;
+    quizzImage = document.querySelector(".qImage").value;
+    quizzNPerguntas = document.querySelector(".nPerguntas").value;
+    quizzNNiveis = document.querySelector(".nNiveis").value;
+
+    if (
+        quizzTitulo.length < 20 ||
+        quizzNPerguntas < 3 ||
+        quizzNNiveis < 2 ||
+        (quizzImage.indexOf("https://") < 0 && isImage(quizzImage) === false)
+    ) {
+        alert("Informações não são válidas");
+    } else {
+        console.log("Está válido");
+        gerarCriacaoPerguntas();
+    }
+}
+
+function gerarCriacaoPerguntas() {
+
+}
+
+function gerarCriacaoNiveis() {
+
+}
