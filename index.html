@@ -72,57 +72,47 @@
         <!--</div>-->
 
         <!-- Tela 2 -->
-        <!-- <div>
-            <div class="bannerQuizz">
-                <img class="topoSegundaTela"
+        <div class="bannerQuizz">
+            <img class="topoSegundaTela"
+                src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
+                alt="">
+            <h1 class="chamadaQuizz">Quizz Harry Potter</h1>
+        </div>
+        <div class="pergunta">
+            <div style="background-color: red;" class="cxPergunta">
+                <p>Harry Potter?</p>
+            </div>
+        </div>
+        <div class="respostas">
+            <div><img class="imgPerg"
                     src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
                     alt="">
-                <h1 class="chamadaQuizz">Quizz Harry Potter</h1>
+                <p>Harry</p>
             </div>
-            <div class="caixaPergunta">
-                <div class="pergunta" style="background-color: red;">
-                    <div>Harry Potter?</div>
-                </div>
-                <div class="respostas">
-                    <div>
-                        <img class="imgPerg"
-                            src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
-                            alt="">
-                        <p>Harry</p>
-                    </div>
-                    <div>
-                        <img class="imgPerg"
-                            src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
-                            alt="">
-                        <p>Harry</p>
-                    </div>
-                    <div>
-                        <img class="imgPerg"
-                            src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
-                            alt="">
-                        <p>Harry</p>
-                    </div>
-                    <div>
-                        <img class="imgPerg"
-                            src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
-                            alt="">
-                        <p>Harry</p>
-                    </div>
-                </div>
+            <div><img class="imgPerg"
+                    src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
+                    alt="">
+                <p>Harry</p>
             </div>
-            <div class="resultado">
-                <div class="pergunta" style="background-color: red;">
-                    <div>Harry Potter?</div>
-                </div>
-                <div class="resultadoAqui">
-                    <img class="imgResult"
-                        src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
-                        alt="">
-                    <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão
-                        abaixo para usar o vira-tempo e reiniciar este teste.</p>
-                </div>
+        </div>
+
+        <div class="pergunta">
+            <div style="background-color: red;" class="cxPergunta">
+                <p>Resultado</p>
             </div>
-        </div> -->
+        </div>
+        <div class="resultadoAqui">
+            <img class="imgResult"
+                src="https://t.ctcdn.com.br/d4xJ_RTRYLKVBqluS94xc74_s6c=/1400x788/smart/filters:format(webp)/i525540.jpeg"
+                alt="">
+            <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão
+                abaixo para usar o vira-tempo e reiniciar este teste.</p>
+        </div>
+
+        <button class="botaoVermelho" onclick="acessarQuizz()">Acessar Quizz</button>
+        <div></div>
+        <button class="botaoBranco" onclick="voltarHome()">Voltar pra home</button>
+
 
 
         <!-- Tele 3 Criação de perguntas pag 1-->
@@ -144,8 +134,7 @@
             </div>
             <div class="botaoQuiz" onclick="gerarSegundaPagina()">
                 <button>Prosseguir pra criar perguntas</button>
-            </div>
-        </div>-->
+            </div>-->
 
         <!-- Tela 3 Criação de perguntas pag 2 -->
         <!-- <div>
@@ -172,11 +161,10 @@
                     <input type="text" placeholder=" URL da imagem ${numero}">
                     <div class="recuo"></div>
                 </div>
-                <div>
-                    <button class="botaoVermelho" onclick="gerarTerceiraPagina()">Prosseguir para criar níveis</button>
-                </div>
             </div>
-        </div> -->
+            <div>
+                <button class="botaoVermelho" onclick="gerarTerceiraPagina()">Prosseguir para criar níveis</button>
+            </div>-->
 
         <!-- Tela 3 Criação de perguntas pag 3-->
         <!--<div>
@@ -208,12 +196,15 @@
             <button class="botaoVermelho" onclick="acessarQuizz()">Acessar Quizz</button>
             <div></div>
             <button class="botaoBranco" onclick="voltarHome()">Voltar pra home</button>
-        </div>-->
+        </div> -->
+
     </div>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
