@@ -322,8 +322,12 @@ h2 {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%);
 }
 
-.listaCriacao>div {
+.listaCriacao {
+    margin-bottom: 30px;
     width: 600px;
+}
+
+.criacaoDois {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -415,4 +419,11 @@ h2 {
     left: 25px;
     bottom: 15px;
     color: #FFFFFF;
+}
+
+
+
+.escondido {
+    display: none;
+    overflow: hidden;
 }
