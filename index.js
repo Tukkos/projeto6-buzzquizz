@@ -187,12 +187,17 @@ function renderizarResultado(dados) {
 
 
 // Tela 3---------------------------------------------------------------------------------------------------------------------------------
+
 let quizzTitulo;
 let quizzImage;
 let quizzNPerguntas;
 let quizzNNiveis;
 
-//gerarCriacaoComeco();
+let arrPerguntas = [];
+let arrNiveis = [];
+let quizFinal = [];
+
+// gerarCriacaoComeco();
 
 function gerarCriacaoComeco() {
     let quizBody = document.querySelector(".quizBody");
@@ -200,16 +205,16 @@ function gerarCriacaoComeco() {
     quizBody.innerHTML = `
     <h1 class="titulo">Comece pelo começo</h1>
         <div class="listaCriacao">
-            <div>
+            <div  class="criacaoDois">
                 <input type="text" maxlength="65" placeholder=" Título do seu quizz (Min 20 e Max 65 caracteres)" class="qTitulo" >
             </div>
-            <div>
+            <div  class="criacaoDois">
                 <input type="text" placeholder=" URL da imagem do seu quizz" class="qImage">
             </div>
-            <div>
+            <div  class="criacaoDois">
                 <input type="number" min="3" placeholder=" Quantidade de perguntas do quizz (Min 3 perguntas)" class="nPerguntas">
             </div>
-            <div>
+            <div  class="criacaoDois">
                 <input type="number" min="2" placeholder=" Quantidade de níveis do quizz (Min 2 níveis)" class="nNiveis">
             </div>
         </div>
@@ -234,14 +239,153 @@ function validarCriacaoComeco() {
         alert("Informações não são válidas");
     } else {
         console.log("Está válido");
+        // console.log(quizzTitulo);
+        // console.log(quizzImage);
+        // console.log(quizzNPerguntas);
+        // console.log(quizzNNiveis);
         gerarCriacaoPerguntas();
     }
 }
 
+gerarCriacaoPerguntas()
+
+let quizzTituloPergunta;
+let quizzCorPergunta;
+let quizzRespostaCerta;
+let quizzRespostaCertaImagem;
+let quizzRespostaErrada;
+let quizzRespostaErradaImagem;
+let quizzRespostaErradaDois;
+let quizzRespostaErradaImagemDois;
+let quizzRespostaErradaTres;
+let quizzRespostaErradaImagemTres;
+
 function gerarCriacaoPerguntas() {
+    let quizBody = document.querySelector(".quizBody");
+    quizzNPerguntas = 1;
+
+    renderQuizbody = ``;
+
+    renderQuizbody += `
+        <h1 class="titulo">Crie suas perguntas</h1>
+    `;
+    for (let i = 0; i < Number(quizzNPerguntas); i++) {
+        renderQuizbody += `
+        <div class="listaCriacao">
+            <li class="expandir">
+                <h1>Pergunta ${i + 1}</h1>
+                <ion-icon name="chevron-down-outline" onclick="mostrarPerguntas(this)"></ion-icon>
+            </li>
+            <div class="criacaoDois escondido">
+                <input class="qPergunta${i}" type="text" minlength="20" placeholder=" Texto da pergunta (Min 20 caracteres)">
+                <input class="qCor${i}" type="text" maxlength="7" placeholder=" Cor de fundo da pergunta (Modelo Hexadecimal)">
+                <h1>Resposta correta</h1>
+                <input class="qRespostaCerta${i}" type="text" placeholder=" Resposta correta">
+                <input class="qRespostaCertaImagem${i}" type="text" placeholder=" URL da imagem">
+                <h1>Respostas incorretas</h1>
+                <input class="qRespostaErrada${i}" type="text" placeholder=" Resposta incorreta 1">
+                <input class="qRespostaErradaImagem${i}" type="text" placeholder=" URL da imagem 1">
+                <div class="recuo"></div>
+                <input class="qRespostaErradaDois${i}" type="text" placeholder=" Resposta incorreta 2 (opcional)">
+                <input class="qRespostaErradaDoisImagem${i}" type="text" placeholder=" URL da imagem 2 (opcional)">
+                <div class="recuo"></div>
+                <input class="qRespostaErradaTres${i}" type="text" placeholder=" Resposta incorreta 3 (opcional)">
+                <input class="qRespostaErradaTresImagem${i}" type="text" placeholder=" URL da imagem 3 (opcional)">
+                <div class="recuo"></div>
+            </div>
+        </div>
+        `;
+    }
+
+    renderQuizbody += `
+        <div>
+            <button class="botaoVermelho" onclick="validarCriacaoPerguntas()">Prosseguir para criar níveis</button>
+        </div>
+    `;
+
+
+    quizBody.innerHTML = renderQuizbody;
+}
+
+function validarCriacaoPerguntas() {
+    for (let j = 0; j < Number(quizzNPerguntas); j++) {
+        quizzTituloPergunta = document.querySelector(`.qPergunta${j}`).value;
+        quizzCorPergunta = document.querySelector(`.qCor${j}`).value;
+        quizzRespostaCerta = document.querySelector(`.qRespostaCerta${j}`).value;
+        quizzRespostaCertaImagem = document.querySelector(`.qRespostaCertaImagem${j}`).value;
+        quizzRespostaErrada = document.querySelector(`.qRespostaErrada${j}`).value;
+        quizzRespostaErradaImagem = document.querySelector(`.qRespostaErradaImagem${j}`).value;
+        quizzRespostaErradaDois = document.querySelector(`.qRespostaErradaDois${j}`).value;
+        quizzRespostaErradaImagemDois = document.querySelector(`.qRespostaErradaDoisImagem${j}`).value;
+        quizzRespostaErradaTres = document.querySelector(`.qRespostaErradaTres${j}`).value;
+        quizzRespostaErradaImagemTres = document.querySelector(`.qRespostaErradaTresImagem${j}`).value;
+
+
+        if (
+            quizzTituloPergunta.length < 20 ||
+
+            quizzCorPergunta.length < 7 ||
+            quizzCorPergunta.indexOf("#") < 0 ||
+
+            quizzRespostaCerta.length === 0 ||
+            (quizzRespostaCertaImagem.indexOf("https://") < 0 && isImage(quizzRespostaCertaImagem) === false) ||
+
+            quizzRespostaErrada.length === 0 ||
+            (quizzRespostaErradaImagem.indexOf("https://") < 0 && isImage(quizzRespostaErradaImagem) === false)
+        ) {
+            alert("Informações não são válidas");
+        } else {
+            console.log("Está válido");
+
+            arrPerguntas += [{
+                title: quizzTituloPergunta,
+                color: quizzCorPergunta,
+                answers: [{
+                    text: quizzRespostaCerta,
+                    image: quizzRespostaCertaImagem,
+                    isCorrectAnswer: true
+                }][{
+                        text: quizzRespostaErrada,
+                        image: quizzRespostaErrada,
+                        isCorrectAnswer: false
+                    }]
+            }]
+
+            if (
+                quizzRespostaErradaDois.length === 0 ||
+                (quizzRespostaErradaImagemDois.indexOf("https://") < 0 && isImage(quizzRespostaErradaImagemDois) === false)
+            ) {
+            } else {
+                arrPerguntas.answers += [{
+                    text: quizzRespostaErradaDois,
+                    image: quizzRespostaErradaImagemDois,
+                    isCorrectAnswer: false
+                }]
+            }
+
+            if (
+                quizzRespostaErradaTres.length === 0 ||
+                (quizzRespostaErradaImagemTres.indexOf("https://") < 0 && isImage(quizzRespostaErradaImagemTres) === false)
+            ) {
+            } else {
+                arrPerguntas.answers += [{
+                    text: quizzRespostaErradaTres,
+                    image: quizzRespostaErradaImagemTres,
+                    isCorrectAnswer: false,
+                }]
+            }
+        }
+        console.log(arrPerguntas);
+        // gerarCriacaoNiveis();
+    }
 
 }
 
 function gerarCriacaoNiveis() {
 
+}
+
+function mostrarPerguntas(elemento) {
+    elemento.classList.add("escondido");
+    elemento.parentNode.parentNode.querySelector(".criacaoDois").classList.remove("escondido");
 }

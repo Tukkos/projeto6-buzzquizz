@@ -337,8 +337,104 @@ h2 {
     align-items: center;
 }
 
-.listaCriacao>div {
+.lista-de-quizzes {
+    padding-top: 77px;
+}
+
+.quizzes-usuario-vazio {
+    display: flex;
+    flex-direction: column;
+    width: 1065px;
+}
+
+.quizzes-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 43px 0 33px 0;
+    border: 2px dashed #D4D4D4;
+    border-radius: 5px;
+}
+
+.quizzes-usuario-vazio span {
+    color: #B9B9B9;
+    font-family: 'Roboto';
+    font-size: 20px;
+    text-align: center;
+    width: 250px;
+}
+
+.quizzes-usuario-vazio h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 70px 0 12px 0;
+}
+
+.quizzes-usuario-vazio div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.quizzes-usuario-vazio button {
+    background-color: #FAFAFA;
+    color: #EC362D;
+    width: 151px;
+    height: 40px;
+    font-family: 'Roboto';
+    font-size: 21px;
+    border: 1px dashed #EC362D;
+    border-radius: 50px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.quizzes-usuario-cheio {
+    display: flex;
+    flex-direction: column;
+    width: 1065px;
+}
+
+.quizzes-usuario-cheio div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.quizzes-usuario-cheio div:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.quizzes-usuario-cheio div:nth-child(3) {
+    margin: 48px 0 12px 0;
+}
+
+.quizzes-usuario-cheio h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.quizzes-usuario-cheio ion-icon {
+    color: #EC362D;
+    font-size: 40px;
+    margin-left: 17px;
+    cursor: pointer;
+}
+
+.caixa-quizz-imagem {
+    background-color: #888888;
+    width: 340px;
+    height: 181px;
+    margin: 0 15px 12px 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.listaCriacao {
+    margin-bottom: 30px;
     width: 600px;
+}
+
+.criacaoDois {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -430,4 +526,11 @@ h2 {
     left: 25px;
     bottom: 15px;
     color: #FFFFFF;
+}
+
+
+
+.escondido {
+    display: none;
+    overflow: hidden;
 }
