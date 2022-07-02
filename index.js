@@ -230,7 +230,7 @@ function validarCriacaoComeco() {
     }
 }
 
-gerarCriacaoPerguntas()
+// gerarCriacaoPerguntas()
 
 let quizzTituloPergunta;
 let quizzCorPergunta;
@@ -245,7 +245,7 @@ let quizzRespostaErradaImagemTres;
 
 function gerarCriacaoPerguntas() {
     let quizBody = document.querySelector(".quizBody");
-    quizzNPerguntas = 1;
+    // quizzNPerguntas = 1;
 
     renderQuizbody = ``;
 
@@ -359,12 +359,123 @@ function validarCriacaoPerguntas() {
             }
         }
         console.log(arrPerguntas);
-        // gerarCriacaoNiveis();
+        gerarCriacaoNiveis();
     }
 
 }
 
+gerarCriacaoNiveis();
+
+let quizzNivel;
+let quizzPorcentagem;
+let quizzNivelImagem;
+let quizzNivelDescricao;
+
 function gerarCriacaoNiveis() {
+    let quizBody = document.querySelector(".quizBody");
+    quizzNNiveis = 2;
+
+    renderQuizbody = ``;
+
+    renderQuizbody += `
+        <h1 class="titulo">Agora decida os níveis</h1>
+    `;
+
+    for (let i = 0; i < (Number(quizzNNiveis) - 1); i++) {
+        renderQuizbody += `
+            <div class="listaCriacao">
+                <li class="expandir">
+                    <h1>Nível ${i + 1}</h1>
+                    <ion-icon name="chevron-down-outline" onclick="mostrarPerguntas(this)"></ion-icon>
+                </li>
+                <div class="criacaoDois escondido">
+                    <input class="qNivel${i}" type="text" minlength="10" placeholder=" Título do nível (Min 10 caracteres)">
+                    <input class="qPorcentagem${i}" type="text" placeholder=" % de acerto mínima (um número entre 1 e 100)">
+                    <input class="qNivelImagem${i}" type="text" placeholder=" URL da imagem do nível">
+                    <input class="grande qNivelDescricao${i}" type="text" minLenght="30" placeholder=" Descrição do nível (Min 30 caracteres)">
+                </div>
+            </div>
+            `
+    }
+
+    renderQuizbody += `
+        <div class="listaCriacao">
+            <li class="expandir">
+                <h1>Nível ${Number(quizzNNiveis)}</h1>
+                <ion-icon name="chevron-down-outline" onclick="mostrarPerguntas(this)"></ion-icon>
+            </li>
+            <div class="criacaoDois escondido">
+                <input class="qNivel${Number(quizzNNiveis)}" type="text" minlength="10" placeholder=" Título do nível pra quem errou tudo :/ (Min 10 caracteres)">
+                <input class="qNivelImagem${Number(quizzNNiveis)}" type="text" placeholder=" URL da imagem do nível pra quem errou tudo :/">
+                <input class="grande qNivelDescricao${Number(quizzNNiveis)}" type="text" minLenght="30" placeholder=" Descrição do nível pra quem errou tudo :/ (Min 30 caracteres)">
+            </div>
+        </div>
+        <div class="botaoQuiz">
+            <button onclick="validarCriacaoNiveis()">Finalizar Quizz</button>
+        </div>
+    `;
+
+    quizBody.innerHTML = renderQuizbody;
+}
+
+function validarCriacaoNiveis() {
+    for (let j = 0; j < (Number(quizzNNiveis) - 1); j++) {
+        quizzNivel = document.querySelector(`.qNivel${j}`).value;
+        quizzPorcentagem = document.querySelector(`.qPorcentagem${j}`).value;
+        quizzNivelImagem = document.querySelector(`.qNivelImagem${j}`).value;
+        quizzNivelDescricao = document.querySelector(`.qNivelDescricao${j}`).value;
+
+        if (
+            quizzNivel.length < 10 ||
+
+            quizzPorcentagem <= 0 ||
+            quizzPorcentagem > 100 ||
+
+            (quizzNivelImagem.indexOf("https://") < 0 && isImage(quizzNivelImagem) === false) ||
+
+            quizzNivelDescricao.length < 30
+        ) {
+            alert("Informações não são válidas");
+        } else {
+            console.log("Está válido");
+
+            arrNiveis += [{
+                title: quizzNivel,
+                image: quizzNivelImagem,
+                text: quizzNivelDescricao,
+                minValue: quizzPorcentagem
+            }]
+        }
+    }
+
+    quizzNivelZero = document.querySelector(`.qNivel${Number(quizzNNiveis)}`).value;
+    quizzPorcentagemZero = 0;
+    quizzNivelImagemZero = document.querySelector(`.qNivelImagem${Number(quizzNNiveis)}`).value;
+    quizzNivelDescricaoZero = document.querySelector(`.qNivelDescricao${Number(quizzNNiveis)}`).value;
+
+    if (
+        quizzNivelZero.length < 10 ||
+
+        (quizzNivelImagemZero.indexOf("https://") < 0 && isImage(quizzNivelImagemZero) === false) ||
+
+        quizzNivelDescricaoZero.length < 30
+    ) {
+        alert("Informações não são válidas");
+    } else {
+        console.log("Está válido");
+
+        arrNiveis += [{
+            title: quizzNivelZero,
+            image: quizzNivelImagemZero,
+            text: quizzNivelDescricaoZero,
+            minValue: "0"
+        }]
+    }
+    console.log(arrNiveis);
+    gerarQuizzValidado()
+}
+
+function gerarQuizzValidado() {
 
 }
 
