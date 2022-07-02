@@ -1,32 +1,49 @@
-const urlQuizzes = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes";
+const urlQuizzes = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/";
 
 
 // Tela 1------------------------------------------------------------------------------------------------------------------
-function criarQuizz() {
+
+listarQuizz();
+
+function listarQuizz() {
+    const promessa = axios.get("https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/");
+    promessa.then(renderizarListaQuizz);
+}
+
+function renderizarListaQuizz(dados) {
+    const axios = dados.data;
     let quizBody = document.querySelector(".quizBody");
-    quizBody.innerHTML = "";
-    quizBody.innerHTML = `
-    <div>
-        <h1 class="titulo">Comece pelo começo</h1>
-        <div class="listaCriacao">
-            <div>
-                <input type="text" minlength="20" maxlength="65"placeholder=" Título do seu quizz (Min 20 e Max 65 caracteres">
+    renderQuizbody = "";
+
+    renderQuizbody += `
+    <div class="lista-de-quizzes">
+    <!-- Quizzes do Usuário sem Quizzes -->
+        <div class="quizzes-usuario-vazio">
+            <div class="quizzes-usuario">
+                <span>Você não criou nenhum quizz ainda :(</span>
+                <div>
+                    <button onclick="gerarCriacaoComeco()">Criar Quizz</button>
+                </div>
             </div>
             <div>
-                <input type="text" placeholder=" URL da imagem do seu quizz">
+                <h1>Todos os Quizzes</h1>
             </div>
-            <div>
-                <input type="text" placeholder=" Quantidade de perguntas do quizz (Min 3 perguntas)">
+            <div class="quizzes-todos">`;
+            for(let i = 0; i < axios.length; i++) {
+                renderQuizbody += `    
+                <div class="caixa-quizz">
+                    <img class="caixa-quizz-imagem" src="${axios[i].image}" alt=""/>
+                    <div class="caixa-quizz-gradient"></div>
+                    <h2 class="caixa-quizz-titulo">${axios[i].title}</h2>
+                </div>
+                `;                
+            }
+            renderQuizbody += `
             </div>
-            <div>
-                <input type="text" placeholder=" Quantidade de níveis do quizz (Min 2 níveis)">
-            </div>
-        </div>
-        <div class="botaoQuiz" onclick="gerarSegundaPagina()">
-            <button>Prosseguir pra criar perguntas</button>
         </div>
     </div>
     `;
+    quizBody.innerHTML = renderQuizbody;
 }
 
 // Tela 2------------------------------------------------------------------------------------------------------------------
