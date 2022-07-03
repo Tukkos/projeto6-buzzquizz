@@ -5,8 +5,15 @@ const urlQuizzes = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/";
 
 listarQuizz();
 
+let idQuizz = 0;
+
+function scrollTopo() {
+    document.querySelector(`.bannerQuizz`).scrollIntoView({ behavior: `smooth`, block: `start` });
+}
+
 function listarQuizz() {
-    const promessa = axios.get("https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/");
+    setTimeout(scrollTopo);
+    const promessa = axios.get(urlQuizzes);
     promessa.then(renderizarListaQuizz);
 }
 
@@ -14,6 +21,7 @@ function renderizarListaQuizz(dados) {
     const axios = dados.data;
     let quizBody = document.querySelector(".quizBody");
     renderQuizbody = "";
+    idQuizz = 0;
 
     renderQuizbody += `
     <div class="lista-de-quizzes">
@@ -28,13 +36,24 @@ function renderizarListaQuizz(dados) {
             <div>
                 <h1>Todos os Quizzes</h1>
             </div>
+<<<<<<< HEAD
             <div class="quizzes-todos">`;
     for (let i = 0; i < axios.length; i++) {
         renderQuizbody += `    
                 <div class="caixa-quizz">
                     <img class="caixa-quizz-imagem" src="${axios[i].image}" alt=""/>
+=======
+            <div>`;
+            for(let i = 0; i < axios.length; i++) {
+                idQuizz = axios[i].id;
+                renderQuizbody += `
+                <div class="caixa-quizz" onclick="buscarQuizz(${idQuizz})">
+                    <div class="caixa-quizz-imagem">
+                        <img src="${axios[i].image}" />
+                    </div>
+>>>>>>> b585eadb5b9036cbcaff7a0433b8bd096bbe5c13
                     <div class="caixa-quizz-gradient"></div>
-                    <h2 class="caixa-quizz-titulo">${axios[i].title}</h2>
+                    <p class="caixa-quizz-titulo">${axios[i].title}</p>
                 </div>
                 `;
     }
@@ -46,6 +65,7 @@ function renderizarListaQuizz(dados) {
     quizBody.innerHTML = renderQuizbody;
 }
 
+
 // Tela 2------------------------------------------------------------------------------------------------------------------
 
 let pontos = 0;
@@ -54,10 +74,11 @@ let perguntas = 0;
 let respostas = [];
 let renderQuizbody;
 
-// buscarQuizz();
+//buscarQuizz();
 
-function buscarQuizz() {
-    const urlQuizzUnico = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/6";
+function buscarQuizz(id) {
+    idQuizz = id;
+    const urlQuizzUnico = `https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/${idQuizz}`;
     const promessa = axios.get(urlQuizzUnico);
     // console.log(promessa);
     promessa.then(renderizarPerguntas);
@@ -69,6 +90,7 @@ function mix() {
 
 function renderizarPerguntas(dados) {
     // console.log(dados);
+    setTimeout(scrollTopo);
     let quizBody = document.querySelector(".quizBody");
     renderQuizbody = ``;
     const axios = dados.data;
@@ -146,7 +168,7 @@ function scroll() {
 }
 
 function buscarQuizz2() {
-    const urlQuizzUnico = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/6";
+    const urlQuizzUnico = `https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/${idQuizz}`;
     const promessa = axios.get(urlQuizzUnico);
     console.log(promessa);
     promessa.then(renderizarResultado);
@@ -173,14 +195,13 @@ function renderizarResultado(dados) {
                 <p>${axios.levels[k].text}</p>
             </div>
         
-            <button class="botaoVermelho" onclick="buscarQuizz()">Reiniciar Quizz</button>
+            <button class="botaoVermelho" onclick="buscarQuizz(${idQuizz})">Reiniciar Quizz</button>
             <div></div>
-            <button class="botaoBranco  proximo" onclick="voltarHome()">Voltar pra home</button>
+            <button class="botaoBranco  proximo" onclick="listarQuizz()">Voltar pra home</button>
             `;
             pontos = 0;
             perguntasRespondidas = 0;
             perguntas = 0;
-            return
         }
     }
 }
@@ -381,7 +402,7 @@ function validarCriacaoPerguntas() {
 
 }
 
-gerarCriacaoNiveis();
+//gerarCriacaoNiveis();
 
 let quizzNivel;
 let quizzPorcentagem;
