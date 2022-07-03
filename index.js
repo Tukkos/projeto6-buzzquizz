@@ -3,7 +3,7 @@ const urlQuizzes = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/";
 
 // Tela 1------------------------------------------------------------------------------------------------------------------
 
-listarQuizz();
+// listarQuizz();
 
 let idQuizz = 0;
 
@@ -36,22 +36,14 @@ function renderizarListaQuizz(dados) {
             <div>
                 <h1>Todos os Quizzes</h1>
             </div>
-<<<<<<< HEAD
-            <div class="quizzes-todos">`;
-    for (let i = 0; i < axios.length; i++) {
-        renderQuizbody += `    
-                <div class="caixa-quizz">
-                    <img class="caixa-quizz-imagem" src="${axios[i].image}" alt=""/>
-=======
             <div>`;
-            for(let i = 0; i < axios.length; i++) {
-                idQuizz = axios[i].id;
-                renderQuizbody += `
+    for (let i = 0; i < axios.length; i++) {
+        idQuizz = axios[i].id;
+        renderQuizbody += `
                 <div class="caixa-quizz" onclick="buscarQuizz(${idQuizz})">
                     <div class="caixa-quizz-imagem">
                         <img src="${axios[i].image}" />
                     </div>
->>>>>>> b585eadb5b9036cbcaff7a0433b8bd096bbe5c13
                     <div class="caixa-quizz-gradient"></div>
                     <p class="caixa-quizz-titulo">${axios[i].title}</p>
                 </div>
@@ -509,12 +501,44 @@ function validarCriacaoNiveis() {
             minValue: "0"
         }]
     }
+
     console.log(arrNiveis);
-    gerarQuizzValidado()
+    mandarQuizzServidor()
+}
+
+function mandarQuizzServidor() {
+    const quizFinal = {
+        title: quizzTitulo,
+        image: quizzImage,
+        questions: arrPerguntas,
+        levels: arrNiveis
+    }
+
+    const quizzMandado = axios.post(urlQuizzes, quizFinal);
+
+    const serializacao = JSON.stringify(quizFinal);
+    localStorage.setItem("quizz", serializacao);
+
+    quizzMandado.then(gerarQuizzValidado)
 }
 
 function gerarQuizzValidado() {
+    const listaerializada = localStorage.getItem("quizz");
+    const lista = JSON.parse(listaerializada);
 
+    const axios = lista[0]
+    renderQuizbody += `
+        <div class="caixa-quizz">
+            <div class="caixa-quizz-imagem">
+                <img src="${axios.image}" />
+            </div>
+            <div class="caixa-quizz-gradient"></div>
+            <p class="caixa-quizz-titulo">${axios.title}</p>
+        </div>
+        <button class="botaoVermelho" onclick="buscarQuizz(${axios.id})">Acessar Quizz</button>
+        <div></div>
+        <button class="botaoBranco" onclick="listarQuizz()">Voltar pra home</button>
+        `;
 }
 
 function mostrarPerguntas(elemento) {
