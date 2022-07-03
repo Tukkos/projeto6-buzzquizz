@@ -29,16 +29,16 @@ function renderizarListaQuizz(dados) {
                 <h1>Todos os Quizzes</h1>
             </div>
             <div class="quizzes-todos">`;
-            for(let i = 0; i < axios.length; i++) {
-                renderQuizbody += `    
+    for (let i = 0; i < axios.length; i++) {
+        renderQuizbody += `    
                 <div class="caixa-quizz">
                     <img class="caixa-quizz-imagem" src="${axios[i].image}" alt=""/>
                     <div class="caixa-quizz-gradient"></div>
                     <h2 class="caixa-quizz-titulo">${axios[i].title}</h2>
                 </div>
-                `;                
-            }
-            renderQuizbody += `
+                `;
+    }
+    renderQuizbody += `
             </div>
         </div>
     </div>
