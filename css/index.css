@@ -402,6 +402,10 @@ h2 {
     font-style: italic;
 }
 
+.grande {
+    height: 180px;
+}
+
 .listaCriacao input::placeholder {
     color: #BABABA;
 }
