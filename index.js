@@ -3,7 +3,7 @@ const urlQuizzes = "https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes/";
 
 // Tela 1------------------------------------------------------------------------------------------------------------------
 
-// listarQuizz();
+listarQuizz();
 
 let idQuizz = 0;
 
